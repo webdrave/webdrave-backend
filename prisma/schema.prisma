@@ -35,7 +35,7 @@ model TeamMember {
 model PortfolioProject {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
-  imgUrls     String[] // Array of image URLs
+  imgUrls     String[]
   videoUrl    String 
   link        String
   description String
@@ -43,7 +43,7 @@ model PortfolioProject {
 
 model Testimonial {
   id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  cName           String   // Client's name
+  cName           String  
   imgUrl          String
   testimonialText String
   date            DateTime
