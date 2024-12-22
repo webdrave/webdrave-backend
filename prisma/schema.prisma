@@ -18,7 +18,7 @@ model Contact {
   id              String   @id @default(auto()) @map("_id") @db.ObjectId
   name            String
   email           String   
-  phone           String?  // Optional field, stored as a string for flexibility
+  phone           String
   message         String
   reasonOfContact String
   createdAt       DateTime @default(now())
@@ -36,7 +36,7 @@ model PortfolioProject {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   imgUrls     String[] // Array of image URLs
-  videoUrl    String?  // Optional video URL
+  videoUrl    String 
   link        String
   description String
 }
