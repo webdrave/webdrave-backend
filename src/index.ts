@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json()); 
 
-app.use("api/v1", V1Routes);
+app.use("/api/v1", V1Routes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, TypeScript with Express!');
