@@ -1,13 +1,13 @@
 import express, { Request, Response } from 'express';
-import aboutRoutes from './routes/about.routes.js';
+import V1Routes from './routes/v1/index.js';
 import dotenv from 'dotenv';
-dotenv.config(); // This will load the variables from the .env file
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(express.json()); // To parse JSON request bodies
+app.use(express.json()); 
 
-app.use(aboutRoutes);
+app.use("api/v1", V1Routes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, TypeScript with Express!');
