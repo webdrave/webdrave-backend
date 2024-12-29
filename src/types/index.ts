@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 export const contactSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  phone: z.string(),
-  message: z.string(),
-  reasonOfContact: z.string(),
+  fullname: z.string().min(1, "Fullname is required"),
+  email: z.string().email("Invalid email format"),
+  mobile: z.string().min(1, "Mobile number is required"),
+  reason: z.string().min(1, "Reason is required"),
+  message: z.string().min(1, "Message is required"),
 });
