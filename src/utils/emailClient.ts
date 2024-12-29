@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 export async function sendContactEmail(
   fullname: string,
   email: string,
-  mobile: string | undefined,
+  mobile: string,
   reason: string,
   message: string
 ) {
@@ -20,7 +20,7 @@ export async function sendContactEmail(
         <h1>Contact Form Submission</h1>
         <p><strong>Name:</strong> ${fullname}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mobile:</strong> ${mobile || "Not Provided"}</p>
+        <p><strong>Mobile:</strong> ${mobile}</p>
         <p><strong>Reason:</strong> ${reason}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
