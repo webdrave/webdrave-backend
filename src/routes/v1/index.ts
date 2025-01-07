@@ -5,6 +5,7 @@ import { Router } from 'express';
 import client from '../../utils/dbClient.js';
 import { contactSchema } from '../../types/index.js';
 import { sendContactEmail } from '../../utils/emailClient.js';
+import teamRouter from './team.js';
 
 
 const router = Router();
@@ -31,15 +32,7 @@ router.post('/contact', async (req: any, res: any) => {
 });
 
 // GET /api/v1/Team
-router.get('/team', async (req, res) => {
-  try {
-    const teamMembers = await client.teamMember.findMany();
-    res.status(200).json(teamMembers);
-  } catch (error) {
-    console.error(error);
-    res.status(400).json({ error: 'Could not retrieve team members' });
-  }
-});
+router.use('/team', teamRouter );
 
 // GET /api/v1/portfolio
 router.get('/portfolio', async (req, res) => {

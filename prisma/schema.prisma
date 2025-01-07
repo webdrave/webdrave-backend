@@ -25,11 +25,13 @@ model Contact {
 }
 
 model TeamMember {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  name  String
-  role  String
-  imgUrl String
-  bio   String
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  role       String
+  imgUrl     String
+  bio        String
+  linkedin   String
+  github     String
 }
 
 model PortfolioProject {
